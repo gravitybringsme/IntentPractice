@@ -6,15 +6,18 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:gravity="center"
     android:padding="20dp"
-    tools:context=".MainActivity">
+    tools:context=".OtherActivity">
 
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="다른 화면으로 들어온 상태입니다."/>
     <Button
-        android:id="@+id/moveToOtherBtn"
+        android:id="@+id/returnToMainBtn"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="다른 화면으로 이동"/>
-
-
+        android:text="이전화면으로 돌아가기"/>
 
 </LinearLayout>
