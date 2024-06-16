@@ -7,6 +7,7 @@ import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import android.content.Intent
 import android.widget.Button
+import android.widget.EditText
 
 class MainActivity : AppCompatActivity() {
 
@@ -21,6 +22,18 @@ class MainActivity : AppCompatActivity() {
             insets
 
 
+        }
+
+        val sendMessageBtn : Button = findViewById<Button>(R.id.sendMessageBtn)
+        sendMessageBtn.setOnClickListener{
+
+            // 입력할 내용을 변수에 저장
+
+            val inputMessage = findViewById<EditText>(R.id.messageEdt).text.toString()
+            val myIntent = Intent(this, MessageActivity::class.java)
+
+            myIntent.putExtra("message", inputMessage)
+            startActivity(myIntent)
         }
 
         val moveToOtherBtn : Button = findViewById<Button>(R.id.moveToOtherBtn)
