@@ -7,6 +7,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import android.content.Intent
+import android.net.Uri
 import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
@@ -25,6 +26,15 @@ class MainActivity : AppCompatActivity() {
             insets
 
 
+        }
+
+        findViewById<Button>(R.id.dialBtn).setOnClickListener{
+
+            //phoneNumEdit에 입력한 전화번호로 연결
+            val inputPhoneNum = findViewById<EditText>(R.id.phoneNumEdt).text.toString()
+            val myUri = Uri.parse("tel:${inputPhoneNum}")
+            val myIntent = Intent(Intent.ACTION_DIAL, myUri)
+            startActivity(myIntent)
         }
 
         findViewById<Button>(R.id.editNicknameBtn).setOnClickListener{
