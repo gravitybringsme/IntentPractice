@@ -79,4 +79,10 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="전화 연결 (CALL)"/>
+
+    <Button
+        android:id="@+id/smsBtn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="문자 전송 화면으로 이동"/>
 </LinearLayout>
