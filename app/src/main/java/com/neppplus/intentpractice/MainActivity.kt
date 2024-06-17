@@ -37,6 +37,15 @@ class MainActivity : AppCompatActivity() {
             startActivity(myIntent)
         }
 
+        findViewById<Button>(R.id.callBtn).setOnClickListener{
+
+            //phoneNumEdit에 입력한 전화번호로 연결
+            val inputPhoneNum = findViewById<EditText>(R.id.phoneNumEdt).text.toString()
+            val myUri = Uri.parse("tel:${inputPhoneNum}")
+            val myIntent = Intent(Intent.ACTION_CALL, myUri)
+            startActivity(myIntent)
+        }
+
         findViewById<Button>(R.id.editNicknameBtn).setOnClickListener{
 
             val myIntent = Intent(this, EditNicknameActivity::class.java)
