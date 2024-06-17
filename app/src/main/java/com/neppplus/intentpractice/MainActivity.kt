@@ -56,6 +56,26 @@ class MainActivity : AppCompatActivity() {
             startActivity(myIntent)
         }
 
+        findViewById<Button>(R.id.naverWebBtn).setOnClickListener{
+
+            //phoneNumEdit에 입력한 전화번호로 연결
+//            val inputPhoneNum = findViewById<EditText>(R.id.phoneNumEdt).text.toString()
+            val myUri = Uri.parse("https://naver.com")
+            val myIntent = Intent(Intent.ACTION_VIEW, myUri)
+//            myIntent.putExtra("sms_body", "미리 내용 입력")
+            startActivity(myIntent)
+        }
+
+        findViewById<Button>(R.id.kakaoStoreBtn).setOnClickListener{
+
+            //phoneNumEdit에 입력한 전화번호로 연결
+//            val inputPhoneNum = findViewById<EditText>(R.id.phoneNumEdt).text.toString()
+            val myUri = Uri.parse("market://details?id=com.kakao.talk")
+            val myIntent = Intent(Intent.ACTION_VIEW, myUri)
+//            myIntent.putExtra("sms_body", "미리 내용 입력")
+            startActivity(myIntent)
+        }
+
         findViewById<Button>(R.id.editNicknameBtn).setOnClickListener{
 
             val myIntent = Intent(this, EditNicknameActivity::class.java)

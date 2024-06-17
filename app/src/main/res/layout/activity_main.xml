@@ -85,4 +85,16 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="문자 전송 화면으로 이동"/>
+
+    <Button
+        android:id="@+id/naverWebBtn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="네이버 웹 화면으로 이동"/>
+
+    <Button
+        android:id="@+id/kakaoStoreBtn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="카카오톡 앱 다운로드 화면으로 이동하기"/>
 </LinearLayout>
