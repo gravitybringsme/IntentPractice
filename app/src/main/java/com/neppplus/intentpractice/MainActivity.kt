@@ -1,5 +1,6 @@
 package com.neppplus.intentpractice
 
+import android.app.Activity
 import android.os.Bundle
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
@@ -8,6 +9,7 @@ import androidx.core.view.WindowInsetsCompat
 import android.content.Intent
 import android.widget.Button
 import android.widget.EditText
+import android.widget.TextView
 
 class MainActivity : AppCompatActivity() {
 
@@ -47,6 +49,22 @@ class MainActivity : AppCompatActivity() {
         moveToOtherBtn.setOnClickListener {
             val myIntent = Intent(this, OtherActivity::class.java) // 출발지, 도착지
             startActivity(myIntent)
+        }
+    }
+
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        super.onActivityResult(requestCode, resultCode, data)
+
+        // 돌아온 이유가 닉네임을 받으러 다녀온게 맞는지?
+        if (requestCode == REQUEST_FOR_NICKNAME){
+
+            // 추가질문 : 확인을 눌러서 돌아온게 맞는가?
+            if(resultCode == Activity.RESULT_OK){
+
+                // 실제 첨부된 새 닉네임을 꺼내서
+                val newNickname = data?.getStringExtra("nickname")
+                findViewById<TextView>(R.id.nicknameTxt).text = newNickname
+            }
         }
     }
 }
